@@ -1,0 +1,152 @@
+/* Global Reset */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/* border: 1px solid #000000; */
+}
+
+/* Variables */
+:root {
+	--font-family: 'Poppins', sans-serif;
+	--white-color: #ffffff;
+	--primary-color: #fffbf9;
+	--secondary-color: #f8c09d;
+	--tertiary-color: #eb666b;
+	--quaternary-color: #d75c60;
+	--black-color: #000000;
+}
+
+/* Base Styles */
+html {
+	font-family: var(--font-family);
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	background: var(--secondary-color);
+	color: var(--black-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* App Styles */
+.app {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+	width: 300px;
+	height: 700px;
+	background: var(--primary-color);
+	border-radius: 1rem;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+	padding: 1rem;
+	margin: 1rem;
+}
+
+.app__input {
+	width: 120px;
+	height: 60px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border: 1px solid var(--black-color);
+	border-radius: 1rem;
+	padding: 1rem;
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+.app__label {
+	white-space: pre-line;
+}
+
+/* Hide number input arrows in Chrome */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Hide number input arrows in Firefox */
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+.app__button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--tertiary-color);
+	color: var(--primary-color);
+	border: none;
+	border-radius: 1rem;
+	width: 120px;
+	height: 60px;
+	padding: 1em 2em;
+	font-size: 1rem;
+	margin-bottom: 0;
+}
+
+.app__button:hover,
+.app__button:focus {
+	cursor: pointer;
+	background-color: var(--quaternary-color);
+}
+
+.app__output {
+	font-weight: 600;
+}
+
+@media (max-width: 450px) {
+	.app {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 2em;
+		border-radius: 0;
+	}
+}
+
+@media (max-height: 500px) {
+	.app {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		border-radius: 0;
+	}
+	.app__title {
+		font-size: 1.5rem;
+	}
+	.app__description {
+		width: 550px;
+		margin-bottom: 0.5rem;
+	}
+	.app__input__label,
+	.app__input__field,
+	.app__input__button {
+		margin-bottom: 0.5rem;
+	}
+	.app__description,
+	.app__input__label,
+	.app__input__field,
+	.app__input__button,
+	.app__output {
+		font-size: 0.8rem;
+	}
+	.app__logo,
+	.app__title,
+	.app__input,
+	.app__output {
+		text-align: center;
+		margin-bottom: 0.2rem;
+	}
+}
