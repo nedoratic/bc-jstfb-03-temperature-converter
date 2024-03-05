@@ -10,28 +10,33 @@
 
 /* Variables */
 :root {
-	--font-family: 'Poppins', sans-serif;
-	--white-color: #ffffff;
-	--primary-color: #fffbf9;
-	--secondary-color: #f8c09d;
-	--tertiary-color: #eb666b;
-	--quaternary-color: #d75c60;
-	--black-color: #000000;
+	--font: 'Poppins', sans-serif;
+	--white: #ffffff;
+	--color-1: #fff4da;
+	--color-2: #ffe5d8;
+	--yellow: #ffe78e;
+	--color-3: #f8c09d;
+	--color-4: #ffa585;
+	--color-5: #eb666b;
+	--color-6: #766c8a;
+	--black: #000000;
 }
 
 /* Base Styles */
 html {
-	font-family: var(--font-family);
+	font-family: var(--font);
 }
 
 body {
-	width: 100vw;
-	height: 100vh;
-	background: var(--secondary-color);
-	color: var(--black-color);
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	width: 100vw;
+	height: 100vh;
+
+	background: var(--color-2);
+	color: var(--black);
 }
 
 /* App Styles */
@@ -40,33 +45,44 @@ body {
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	text-align: center;
+
 	width: 300px;
 	height: 700px;
-	background: var(--primary-color);
+
+	text-align: center;
+
+	box-shadow: 0 0 10px 0 rgba(118, 108, 138, 0.8);
+
+	margin: 1em;
+	padding: 1em;
+
 	border-radius: 1rem;
-	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-	padding: 1rem;
-	margin: 1rem;
+
+	background: var(--white);
+}
+
+.app__logo {
+	height: 60px;
 }
 
 .app__input {
-	width: 120px;
-	height: 60px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	text-align: center;
-	border: 1px solid var(--black-color);
-	border-radius: 1rem;
-	padding: 1rem;
-	font-size: 2rem;
-	font-weight: 600;
-}
 
-.app__label {
-	white-space: pre-line;
+	width: 10rem;
+	height: 4rem;
+
+	font-family: var(--font);
+	font-size: 1.4rem;
+	font-weight: 600;
+	text-align: center;
+	color: var(--black);
+
+	border: 2px solid var(--color-6);
+	border-radius: 1rem;
+	padding: 1em;
 }
 
 /* Hide number input arrows in Chrome */
@@ -81,25 +97,70 @@ input[type='number'] {
 	-moz-appearance: textfield;
 }
 
+.app__units {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+/* Hide default radio buttons */
+input[type='radio'] {
+	display: none;
+}
+
+/* Style custom radio buttons */
+input[type='radio'] + label {
+	display: inline-block;
+	position: relative;
+	padding-left: 25px;
+	cursor: pointer;
+}
+
+/* Style indicator dot */
+input[type='radio'] + label:before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background: var(--color-6);
+}
+
+/* Style indicator dot when the radio button is checked */
+input[type='radio']:checked + label:before {
+	background: var(--color-4);
+}
+
 .app__button {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background: var(--tertiary-color);
-	color: var(--primary-color);
+
+	width: 10rem;
+	height: 4rem;
+
+	font-family: var(--font);
+	font-size: 1.4rem;
+	font-weight: 600;
+	text-align: center;
+	color: var(--black);
+
 	border: none;
 	border-radius: 1rem;
-	width: 120px;
-	height: 60px;
-	padding: 1em 2em;
-	font-size: 1rem;
-	margin-bottom: 0;
+	padding: 1em;
+
+	background: var(--color-3);
 }
 
 .app__button:hover,
 .app__button:focus {
 	cursor: pointer;
-	background-color: var(--quaternary-color);
+	background-color: var(--color-4);
 }
 
 .app__output {
@@ -122,31 +183,5 @@ input[type='number'] {
 		height: 100%;
 		margin: 0;
 		border-radius: 0;
-	}
-	.app__title {
-		font-size: 1.5rem;
-	}
-	.app__description {
-		width: 550px;
-		margin-bottom: 0.5rem;
-	}
-	.app__input__label,
-	.app__input__field,
-	.app__input__button {
-		margin-bottom: 0.5rem;
-	}
-	.app__description,
-	.app__input__label,
-	.app__input__field,
-	.app__input__button,
-	.app__output {
-		font-size: 0.8rem;
-	}
-	.app__logo,
-	.app__title,
-	.app__input,
-	.app__output {
-		text-align: center;
-		margin-bottom: 0.2rem;
 	}
 }

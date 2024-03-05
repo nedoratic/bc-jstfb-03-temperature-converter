@@ -19,14 +19,21 @@
 	</head>
 	<body>
 		<div class="app">
-			<img src="./img/favicon.svg" alt="Logo" height="80" />
+			<img class="app__logo" src="./img/favicon.svg" alt="Logo" />
 			<h1 class="app__title">Temperature Converter</h1>
 			<input class="app__input" type="number" value="0" name="" id="" />
-			<label class="app__label" for="toF">Convert Celsius to Fahrenheit</label>
-			<button class="app__button" id="toF" type="button"><img src="./img/fahrenheit.svg" alt="Fahrenheit" width="60" /></button>
-			<label class="app__label" for="toC">Convert Fahrenheit to Celsius</label>
-			<button class="app__button" id="toC" type="button"><img src="./img/celsius.svg" alt="Celsius" width="60" /></button>
-			<p class="app__output" id="result">Click on the desired unit to convert to it.</p>
+			<div class="app__units">
+				<div>
+					<input type="radio" name="unit" id="toF" value="toF" checked />
+					<label class="app__label" for="toF">Celsius to Fahrenheit</label>
+				</div>
+				<div>
+					<input type="radio" name="unit" id="toC" value="toC" />
+					<label class="app__label" for="toC">Fahrenheit to Celsius</label>
+				</div>
+			</div>
+			<button class="app__button">Convert</button>
+			<p class="app__output" id="result">Enter temperature. Select desired conversion. Convert.</p>
 		</div>
 	</body>
 </html>
