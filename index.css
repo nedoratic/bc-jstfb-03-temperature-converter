@@ -190,10 +190,10 @@ input[type='radio']:checked + label:before {
 	.app__title {
 		font-size: 1.4rem;
 	}
-	.app__label {
+	.app__unit-label {
 		font-size: 0.8rem;
 	}
-	.app__input,
+	.app__input-label,
 	.app__button {
 		width: 8rem;
 		height: 3rem;
