@@ -9,11 +9,11 @@ const result = document.querySelector('.app__output');
 let temperature;
 let convertedTemperature;
 
-// Conversion to Celsius
-const convertToCelsius = (temperature) => ((temperature - 32) * 5) / 9;
-
 // Conversion to Fahrenheit
 const convertToFahrenheit = (temperature) => (temperature * 9) / 5 + 32;
+
+// Conversion to Celsius
+const convertToCelsius = (temperature) => (temperature - 32) * (5 / 9);
 
 // Convert
 const convert = () => {
@@ -25,10 +25,10 @@ const convert = () => {
 	}
 
 	if (toFahrenheit.checked) {
-		convertedTemperature = convertToCelsius(temperature).toFixed(1);
+		convertedTemperature = convertToFahrenheit(temperature).toFixed(1);
 		result.textContent = `${temperature}°C is ${convertedTemperature}°F`;
 	} else if (toCelsius.checked) {
-		convertedTemperature = convertToFahrenheit(temperature).toFixed(1);
+		convertedTemperature = convertToCelsius(temperature).toFixed(1);
 		result.textContent = `${temperature}°F is ${convertedTemperature}°C`;
 	} else {
 		result.textContent = 'Please select a unit to convert.';
