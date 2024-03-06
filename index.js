@@ -10,21 +10,7 @@ let temperature;
 let convertedTemperature;
 
 // Conversion to Celsius
-const convertToCelsius = (temperature) => (temperature * 9) / 5 + 32;
+const convertToCelsius = (temperature) => ((temperature - 32) * 5) / 9;
 
 // Conversion to Fahrenheit
-const convertToFahrenheit = (temperature) => ((temperature - 32) * 5) / 9;
-
-// Convert
-const convert = () => {
-	temperature = Number(input.value);
-	if (toFahrenheit.checked) {
-		convertedTemperature = convertToCelsius(temperature).toFixed(1);
-		result.textContent = `${temperature}°C is ${convertedTemperature}°F`;
-	} else if (toCelsius.checked) {
-		convertedTemperature = convertToFahrenheit(temperature).toFixed(1);
-		result.textContent = `${temperature}°F is ${convertedTemperature}°C`;
-	}
-};
-
-button.addEventListener('click', convert);
+const convertToFahrenheit = (temperature) => (temperature * 9) / 5 + 32;
